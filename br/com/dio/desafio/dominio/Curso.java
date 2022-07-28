@@ -1,6 +1,6 @@
 package Bootcamp.br.com.dio.desafio.dominio;
 
-public class Curso {
+public class Curso extends Conteudo {
     
     /* IMPORTANTE: 
     ** Encapsulamento - Generate methods getters and setters; 
@@ -16,26 +16,19 @@ public class Curso {
     
     // ##################################################################
     //Attibutes
-    private String titulo;
-    private String descricao;
     private int cargaHoraria;
     // ##################################################################
 
     // ##################################################################
-    //Methods getter and setter
-    public String getTitulo() {
-        return titulo;
+    // Implementando o metodo abstrato herdado de conteudo. 
+    @Override
+    public double calcularXP() {
+        return XP_PADRAO * cargaHoraria;
     }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    // ##################################################################
     
+    // ##################################################################
+    //Methods getter and setter   
     public int getCargaHoraria() {
         return cargaHoraria;
     }
@@ -48,11 +41,12 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso: {" + 
-        "Titulo: " + titulo + 
-        ", Descrição: " + descricao +
+        "Titulo: " + getTitulo() + 
+        ", Descrição: " + getDescricao() +
         ", Carga Horaria: " + cargaHoraria +
         "}";
     }
     // ##################################################################
+   
     
 }

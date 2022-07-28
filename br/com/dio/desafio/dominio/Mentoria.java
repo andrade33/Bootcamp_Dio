@@ -2,12 +2,10 @@ package Bootcamp.br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
 
-public class Mentoria {
+public class Mentoria extends Conteudo{
     // ##################################################################
-    //Attibutes
-    private String titulo;
-    private String descricao;
     
+    //Attibutes 
     /*Classe java que possibilita trabalhar com datas*/
     private LocalDate data; ;
     // ##################################################################
@@ -19,19 +17,16 @@ public class Mentoria {
     // ##################################################################
 
     // ##################################################################
+    //Implementand o metodo abstato herdado de Conteudo;
+    @Override
+    public double calcularXP() {
+        return XP_PADRAO + 20;
+    }
+    // ##################################################################
+
+    // ##################################################################
     //Methods getter and setter
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    
     public LocalDate getData() {
         return data;
     }
@@ -44,8 +39,8 @@ public class Mentoria {
     @Override
     public String toString() {
         return "Mentoria: {" + 
-        "Titulo: " + titulo + 
-        ", Descrição: " + descricao +
+        "Titulo: " + getTitulo() + 
+        ", Descrição: " + getDescricao() +
         ", Data: " + data + 
         "}";
     }
